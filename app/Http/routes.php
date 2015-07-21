@@ -18,3 +18,15 @@ Route::resource('books', 'BookController');
 
 Route::get('/', 'WelcomeController@index');
 
+/*
+ * Static about-us page!
+ */
+Route::get('/about-us', function () {
+    return View::make('about-us.index');
+});
+
+/*
+ * Product Page
+ */
+Route::get('/products/{name}', 'ProductsController@index');
+
