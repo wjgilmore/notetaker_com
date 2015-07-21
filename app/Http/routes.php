@@ -11,5 +11,10 @@
 |
 */
 
+Route::get('about', 'AboutController@index');
+
+Route::resource('books', 'BookController');
+
+
 Route::get('/', 'WelcomeController@index');
 

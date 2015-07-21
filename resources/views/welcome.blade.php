@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
-    </head>
-    <body>
+@extends('layouts.app')
+
+@section('content')
+
+
 <h1>Welcome to Notetaker</h1>
-    </body>
-</html>
+
+
+@endsection
