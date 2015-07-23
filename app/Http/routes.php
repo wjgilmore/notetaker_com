@@ -13,9 +13,6 @@
 
 Route::get('about', 'AboutController@index');
 
-Route::resource('books', 'BookController');
-
-
 Route::get('/', 'WelcomeController@index');
 
 /*
@@ -26,7 +23,6 @@ Route::get('/about-us', function () {
 });
 
 /*
- * Product Page
+ * Notebooks Resource
  */
-Route::get('/products/{name}', 'ProductsController@index');
-
+Route::resource('/books', 'BooksController');

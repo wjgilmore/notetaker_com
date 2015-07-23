@@ -2,14 +2,18 @@
 
 @section('content')
 
-	<h1>Books</h1>
-
-@foreach($books as $book)
-
 <p>
-{{ $book->name }}
+<a href="{{ URL::route('books.create') }}" class="btn btn-primary">Create Notebook</a>
 </p>
 
-@endforeach
+	<h1>Notebooks</h1>
+
+	@foreach($books as $book)
+
+	<p>
+	<a href="{{ URL::route('books.show', $book->id) }}">{{ $book->name }}</a>
+	</p>
+
+	@endforeach
 
 @endsection
