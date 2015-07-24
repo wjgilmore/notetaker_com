@@ -6,3 +6,7 @@ body {
 body {
   padding: 55px 10px 0px 10px;
 }
+
+.date_picker {
+  width: 150px;
+}

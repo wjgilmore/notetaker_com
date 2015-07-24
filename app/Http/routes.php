@@ -26,3 +26,8 @@ Route::get('/about-us', function () {
  * Notebooks Resource
  */
 Route::resource('/books', 'BooksController');
+
+/*
+ * Study Resource
+ */
+Route::resource('/study', 'StudyController');
