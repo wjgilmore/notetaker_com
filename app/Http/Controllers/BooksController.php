@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Book;
-use App\Http\Requests\CreateNotebookRequest;
+use App\Http\Requests\NotebookRequest;
 
 class BooksController extends Controller
 {
@@ -34,7 +34,7 @@ class BooksController extends Controller
         return view('books.create');    	    	
     }
 
-    public function store(CreateNotebookRequest $request) {
+    public function store(NotebookRequest $request) {
 
     	$book = new Book;
 
@@ -45,6 +45,26 @@ class BooksController extends Controller
 	    return \Redirect::route('books.show', 
 	    	array($book->id))->with('message', 'Your notebook has been created!');
 	
+    }
+
+    public function edit($id) {
+
+        $book = Book::find($id);
+        return view('books.edit')->with('book', $book);
+    }
+
+    public function update($id, NotebookRequest $request) {
+
+        $book = Book::findOrFail($id);
+
+        $book->update([
+            'name' => $request->get('name'), 
+            'author' => $request->get('author')
+        ]);
+
+        return \Redirect::route('books.edit', 
+            array($book->id))->with('message', 'Your notebook has been updated!');
+ 
     }
 
 }
